@@ -31,7 +31,12 @@ let validatorParams = [
     check('dateRegister')
         .trim()
         .isDate()
-        .withMessage('La fecha de registro debe ser una fecha válida en formato AAAA-MM-DD.')
+        .withMessage('La fecha de registro debe ser una fecha válida en formato AAAA-MM-DD.'),
+
+    check('role')
+        .isIn(['admin'])
+        .withMessage('El usuario no es administrador.'),
+
 ];
 
 

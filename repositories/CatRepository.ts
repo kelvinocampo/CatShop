@@ -9,6 +9,11 @@ class CatRepository {
         return db.execute(sql);
     }
 
+    static async getByID(id:number) {
+        const sql = 'SELECT * FROM cat WHERE id = ?';
+        return db.execute(sql,[id]);
+    }
+
     static async register(cat: Cat) {
         const sql = 'INSERT INTO cat (name, description, sex, age, weight, dateRegister) VALUES (?,?,?,?,?,?)';
         const values = [cat.name, cat.description, cat.sex, cat.age, cat.weight, cat.dateRegister];

@@ -7,7 +7,3 @@ let generateToken = (properties: any, key: any, minutes: number) => jwt.sign({
 );
 
 export default generateToken;
-
-
-
-

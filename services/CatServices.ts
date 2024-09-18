@@ -7,6 +7,10 @@ class CatService {
         return await CatRepository.get();
     }
 
+    static async getByID(id:number) {
+        return await CatRepository.getByID(id);
+    }
+
     static async register(cat: Cat) {
         return await CatRepository.register(cat);
     }

@@ -12,8 +12,9 @@ let login = async (req: Request, res: Response) => {
       password
     } = req.body;
     const login = await UserService.logIn(new logIn(email, password))
+    const TOKEN_DURATION = 60
     if (login.logged) {
-      let token = generateToken({ id: login.id }, process.env.KEY_TOKEN, 5)
+      let token = generateToken({ id: login.data.id, role: login.data.role }, process.env.KEY_TOKEN, TOKEN_DURATION)
       return res.status(200).json({
         status: login.status,
         token: token

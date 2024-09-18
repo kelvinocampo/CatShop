@@ -10,14 +10,7 @@ let validatorParams = [
     check('dateAdopt')
         .trim()
         .isDate()
-        .withMessage('La fecha de adopcion debe ser una fecha válida en formato AAAA-MM-DD.'),
-
-    check('email')
-        .trim()
-        .isLength({ max: 100 })
-        .withMessage('El email no puede exceder los 100 caracteres.')
-        .isEmail()
-        .withMessage('Debe proporcionar un correo electrónico válido.')
+        .withMessage('La fecha de adopcion debe ser una fecha válida en formato AAAA-MM-DD.')
 
 ];
 

@@ -9,9 +9,10 @@ class UserService {
         user.password = await generateHash(user.password);
         return await UserRepository.add(user);
     }
-    static async getID(email:string) {
-        return await UserRepository.getID(email);
+    static async getByID(id:number) {
+        return await UserRepository.getByID(id);
     }
+    
     static async logIn(user: logIn) {
         return await UserRepository.logIn(user);
     }

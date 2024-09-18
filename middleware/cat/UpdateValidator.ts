@@ -32,11 +32,14 @@ let validatorParams = [
         .isIn(['M', 'H'])
         .withMessage('El sexo debe ser "M" (macho) o "H" (hembra).'),
 
-
     check('dateRegister')
         .trim()
         .isDate()
-        .withMessage('La fecha de registro debe ser una fecha válida en formato AAAA-MM-DD.')
+        .withMessage('La fecha de registro debe ser una fecha válida en formato AAAA-MM-DD.'),
+
+    check('role')
+        .isIn(['admin'])
+        .withMessage('El usuario no es administrador.')
 ];
 
 
